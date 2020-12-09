@@ -10,7 +10,7 @@ import com.clearminds.ddjp.excepciones.BDDException;
 @Path("/estudiantes")	
 public class RestEstudiantes {
 	
-	@Path("insertar")
+	@Path("/insertar")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	
@@ -26,6 +26,21 @@ public class RestEstudiantes {
 			e.printStackTrace();
 		}
 		System.out.println(estudiante.toString());
+	}
+	
+	@Path("/actualizar")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void actualizar(Estudiante estudiante){
+		ServicioEstudiante srvEstudiante = new ServicioEstudiante();
+		try {
+			srvEstudiante.actualizarEstudiante(estudiante);
+		} catch (BDDException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(estudiante.toString());
+		
 	}
 
 }
