@@ -2,6 +2,7 @@ package com.clearminds.ddjp.servicios;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 
@@ -29,7 +30,7 @@ public class RestEstudiantes {
 	}
 	
 	@Path("/actualizar")
-	@POST
+	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void actualizar(Estudiante estudiante){
 		ServicioEstudiante srvEstudiante = new ServicioEstudiante();
